@@ -1,50 +1,84 @@
-// Rediet Medhane
-// CS172-1
-// Dr. Joe Dumoulin
-// 14 Febrary 2017
+//Rediet Medhane
+//CS172-1
+//Dr. Joe Dumoulin
+//14 February 2017
+//HW1EX3
 
 #include <iostream>
+#include <cmath>
+#include <ctime>
 using namespace std;
 
-void ex04();
-void arrayTransfer(int give[], int arraysize);
-void arrayCalc(int a[], int asize);
+void ex02();
+void ex03(int a);
+void add(int p, int q);
+void plusOne(int r);
 
 int main()
 {
-	ex04();
+	ex02();
+	plusOne(8);
 }
 
-void ex04()
+void ex02()
 {
-	double entry;
-	const int inputsize = 3;
-	int input[inputsize];
-	for (int i = 0; i < 3; i++)
+	
+	int entry = 0;
+	do
 	{
-		cout << "Please enter an integer:" << endl;
+	
+		cout << "Please enter an integer between 1 and 10: " << endl;
 		cin >> entry;
-		input[i] = entry;
+	} while (!(entry >= 1 && entry <= 10));
+	 
+	if (entry >= 1 && entry <= 10)
+		{
+			double cube = 0;
+			double cubesum = 0;
+			for (int i = 1; i <= entry; i++)
+			{
+				cube = i*i*i;
+				cubesum = cubesum + cube;
+			}
+			cout << "The sum of the cubes from 1 to your entry, " << entry << ", is " << cubesum << endl;
+		}
+
+	int i = 0;
+	do
+	{
+		cout << "*";
+		i++;
+	} while (i < entry);
+	cout << endl;
+
+	for (int i = 0; i <= 40; i++)
+	{
+		if (i % 2 == 0)
+		{
+			int evennum = i;
+			cout << i << " ";
+		}
 	}
-	double sum = input[0] + input[1] + input[2];
-	double product = input[0] * input[1] * input[2];
-	cout << "The sum of these three numbers is: " << sum << endl;
-	cout << "The product of these numbers is: " << product << endl;
-	arrayTransfer(input, 3);
-	arrayCalc(input, 3);
+	cout << endl;
+	ex03(entry);
+	srand(time(NULL));
+	int x = rand() % 100;
+	int y = rand() % 100;
+	add(x, y);
 }
 
-void arrayTransfer(int give[], int arraysize)
+void ex03(int a)
 {
-	cout << "The size of the array is " << arraysize << endl;
-	cout << "The values stored in the array are: " << give[0] << " , " << give[1] << " , " << give[2] << endl;
+	double twice = a * 2;
+	cout << "Your entry times two is " << twice << endl;
 }
 
-void arrayCalc(int a[], int asize)
+void add(int p, int q)
 {
-	cout << "Please enter a value: " << endl;
-	double value;
-	cin >> value;
-	double p = (value * a[2]) + (value * a[1]) + (value * a[0]);
-	cout << "We have mulitplied "<< value << " by each of the values wihtin the array and have added up all the products." <<" Result: " << p << endl;
+	int sum = p + q;
+}
+void plusOne(int r)
+{
+	int onemore = r + 1;
+	cout << "The given integer plus one is " << onemore << endl;
 }
