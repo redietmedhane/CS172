@@ -49,8 +49,8 @@ public:
 
 	//Returns a vector of citizens that all have
 	//the given color as their favorite color.
-	//For example, if color is ìBlueî this will return all citizens
-	//for this city whoís favorite color is Blue.
+	//For example, if color is ‚ÄúBlue‚Äù this will return all citizens
+	//for this city who‚Äôs favorite color is Blue.
 	vector<Citizen*> getCitizensForFavoriteColor(string color);
 };
 
